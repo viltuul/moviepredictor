@@ -22,6 +22,10 @@ roles = [
 
 print_on = True
 ia = IMDb()
+print ia.get_movie_infoset()
+print ia.get_person_infoset()
+print ia.get_character_infoset()
+print ia.get_company_infoset()
 
 def searchPersonIdByName(personName):
     if print_on:
@@ -77,7 +81,9 @@ def getMoviesByMovieIds(movieIds):
     for movieId in movieIds:
         if print_on:
             print 'a get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
-        movies.append(ia.get_movie(movieId))
+        movie = ia.get_movie(movieId)
+        #ia.update(movie, 'all')
+        movies.append(movie)
         if print_on:
             print 'b get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
 
@@ -110,8 +116,8 @@ if print_on:
 # to show that update adds more information to movie, 
 # big question is what sets are there that can be updated, 
 # which are we interested in??
-    ia.update(movie, 'business')
-    print vars(movie)
+#    ia.update(movie, 'business')
+#    print vars(movie)
 
 # just to mention, person can have pseudonames, should we search them as well?    
 if print_on:
