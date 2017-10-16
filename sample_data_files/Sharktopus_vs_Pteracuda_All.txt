@@ -1,0 +1,258 @@
+{
+'_roleIsPerson': False, 
+'_roleClass': <class 'imdb.Character.Character'>, 
+'movieID': '3743126', 
+'infoset2keys': 
+	{
+	'plot': [], 
+	'main': [
+		'rating', 
+		'votes', 
+		'camera and electrical department', 
+		u'distributors', 
+		'runtimes', 
+		'original music', 
+		'year', 
+		'miscellaneous crew', 
+		'color info', 
+		'languages', 
+		'genres', 
+		'producer', 
+		'title', 
+		'assistant director', 
+		'writer', 
+		'casting director', 
+		'visual effects', 
+		'editor', 
+		'certificates', 
+		'sound crew', 
+		'country codes', 
+		'language codes', 
+		'cover url', 
+		u'editorial department', 
+		'sound mix', 
+		'cinematographer', 
+		'director', 
+		'miscellaneous companies', 
+		u'animation department', 
+		'akas', 
+		'aspect ratio', 
+		u'art department', 
+		u'production companies', 
+		'kind', 
+		'countries', 
+		'plot outline', 
+		'cast'
+		]'
+	}, 
+'current_info': ['main', 'plot'], 
+'keys_tomodify':
+	{
+	'crazy credits': None, 
+	'plot': None, 
+	'business': None, 
+	'dvd': None, 
+	'video review': None, 
+	'alternate versions': None, 
+	'soundtrack': None, 
+	'quotes': None, 
+	'supplements': None, 
+	'news': None, 
+	'goofs': None, 
+	'trivia': None, 
+	'faqs': None, 
+	'laserdisc': None
+	}, 
+'notes': u'', 
+'key2infoset': 
+	{
+	'rating': 'main', 
+	'producer': 'main', 
+	'runtimes': 'main', 
+	'year': 'main', 
+	'miscellaneous crew': 'main', 
+	'casting director': 'main', 
+	'languages': 'main', 
+	'votes': 'main', 
+	u'distributors': 'main', 
+	'title': 'main', 
+	'assistant director': 'main', 
+	'writer': 'main', 
+	'kind': 'main', 
+	'color info': 'main', 
+	'visual effects': 'main', 
+	'editor': 'main', 
+	'certificates': 'main', 
+	'sound crew': 'main', 
+	'country codes': 'main', 
+	'language codes': 'main', 
+	'cover url': 'main', 
+	u'editorial department': 'main', 
+	'sound mix': 'main', 
+	'genres': 'main', 
+	'director': 'main', 
+	'miscellaneous companies': 'main', 
+	'cinematographer': 'main', 
+	'akas': 'main', 
+	'aspect ratio': 'main', 
+	u'production companies': 'main', 
+	'camera and electrical department': 'main', 
+	u'art department': 'main', 
+	'countries': 'main', 
+	'plot outline': 'main', 
+	'cast': 'main', 
+	u'animation department': 'main', 
+	'original music': 'main'
+	}, 
+'myTitle': u'', 
+'charactersRefs': {}, 
+'accessSystem': 'http', 
+'namesRefs': {}, 
+'myID': None, 
+'_Container__role': None, 
+'titlesRefs': {}, 
+'data': 
+	{
+	'rating': 3.4, 
+	'camera and electrical department': 
+		[
+		<Person id:6054418[http] name:_Mercader, Ivonne_>, 
+		<Person id:7268156[http] name:_Then, Frank_>
+		], 
+	u'distributors': 
+		[
+		<Company id:0282285[http] name:_Syfy_>, 
+		<Company id:0228071[http] name:_Interfilm_>, 
+		<Company id:0144558[http] name:_Best Entertainment_>, 
+		<Company id:0106087[http] name:_High Fliers Films_>, 
+		<Company id:0003188[http] name:_IPA Asia Pacific_>, 
+		<Company id:0322051[http] name:_Jigsaw Entertainment_>
+		], 
+	'runtimes': [u'84'], 
+	'year': 2014, 
+	'miscellaneous crew': 
+		[
+		<Person id:4182380[http] name:_Dunn, Sarah_>, 
+		<Person id:4182380[http] name:_Dunn, Sarah_>, 
+		<Person id:6660609[http] name:_Olivo, Katia_>
+		], 
+	'color info': [], 
+	'languages': [u'English'], 
+	'votes': 1349, 
+	'producer': 
+		[
+		<Person id:0180022[http] name:_Corman, Julie_>, 
+		<Person id:0000339[http] name:_Corman, Roger_>, 
+		<Person id:6508469[http] name:_Llosa, Lucho_>, 
+		<Person id:0721343[http] name:_Reyes, Lorena_>
+		], 
+	'title': u'Sharktopus vs. Pteracuda', 
+	'assistant director': 
+		[
+		<Person id:5455204[http] name:_Dargam, Eduardo Alvarez_>, 
+		<Person id:5830717[http] name:_Cordero, Sheryll Reyes_>, 
+		<Person id:2077418[http] name:_Demallistre, Joel Rodríguez_>
+		], 
+	'writer': 
+		[
+		<Person id:4714447[http] name:_Yamashita, Matt_>
+		], 
+	'casting director': 
+		[
+		<Person id:0721343[http] name:_Reyes, Lorena_>
+		], 
+	'visual effects': 
+		[
+		<Person id:2877888[http] name:_Inman, Jeremy M._>, 
+		<Person id:2877888[http] name:_Inman, Jeremy M._>, 
+		<Person id:3168437[http] name:_Karkus, Art_>, 
+		<Person id:4836249[http] name:_O'Neill, Ethan_>, 
+		<Person id:1024066[http] name:_Sirota, Eliot_>
+		], 
+	'editor': 
+		[
+		<Person id:1628845[http] name:_Kale, Vikram_>
+		], 
+	'certificates': [u'Australia:MA15+::(2016)', u'Germany:16', u'UK:15', u'USA:TV-14'], 
+	'sound crew': 
+		[
+		<Person id:0209181[http] name:_la Cerna, Lorita de_>, 
+		<Person id:0209181[http] name:_la Cerna, Lorita de_>, 
+		<Person id:0320816[http] name:_Giraudi, Patrick_>, 
+		<Person id:0320816[http] name:_Giraudi, Patrick_>, 
+		<Person id:0320816[http] name:_Giraudi, Patrick_>, 
+		<Person id:7027251[http] name:_Santos, Adoniram_>
+		], 
+	'country codes': [u'us'], 
+	'language codes': [u'en'], 
+	'cover url': u'https://images-na.ssl-images-amazon.com/images/M/MV5BNDdkOTAwMTQtNGJlYS00YTY5LTk2OTgtNmMxZDk0OWJlMzFmXkEyXkFqcGdeQXVyMzM4MjM0Nzg@._V1._SX93_SY140_.jpg', 
+	u'editorial department': 
+		[
+		<Person id:6387382[http] name:_Hoke, C.J._>, 
+		<Person id:0002236[http] name:_Klein, Eric M._>, 
+		<Person id:1751822[http] name:_Smalley, Karen_>
+		], 
+	'sound mix': [u'tereo'], 
+	'genres': [u'Horror', u'Sci-Fi'], 
+	'director': 
+		[
+		<Person id:0642223[http] name:_O'Neill, Kevin_>
+		], 
+	'miscellaneous companies': 
+		[
+		<Company id:0185487[http] name:_Digital Post Services_>, 
+		<Company id:0185487[http] name:_Digital Post Services_>
+		], 
+	'cinematographer': 
+		[
+		<Person id:6508470[http] name:_Herrera, Hernan_>
+		], 
+	'akas': 
+		[
+		u'Jurassic Wars: Sharktopus Vs Pteracuda::UK (DVD title)', 
+		u'\u0410\u043a\u0443\u043b\u043e\u0441\u044c\u043c\u0438\u043d\u043e\u0433 \u043f\u0440\u043e\u0442\u0438\u0432 \u043f\u0442\u0435\u0440\u0430\u043a\u0443\u0434\u044b::Russia', 
+		u'O\u015bmiorekin kontra pterakuda::Poland', 
+		u'Sharktopus 2: Rette sich wer kann::Germany (alternative title)', 
+		u'Sharktopus Contra Pteracuda::Brazil (imdb display title)', 
+		u'Sharktopus vs Pteracuda - Kampf der Urzeitgiganten::Germany (imdb display title)'
+		], 
+	'aspect ratio': u'1.78 : 1', 
+	u'production companies': 
+		[
+		<Company id:0061080[http] name:_New Horizons Picture_>
+		], 
+	'kind': u'tv movie', 
+	u'art department': 
+		[
+		<Person id:2150827[http] name:_Moore, Monte M._>
+		], 
+	'countries': [u'USA'], 
+	'plot outline': u'An American scientist creates a half-pterodactyl, half-barracuda creature, Pteracuda, which inevitably escapes, leaving the Sharktopus to stop it.', 
+	'cast': 
+		[
+		<Person id:0001019[http] name:_Carradine, Robert_>, 
+		<Person id:6293727[http] name:_Ceara, Mario_>, 
+		<Person id:5647659[http] name:_Endo, Akari_>, 
+		<Person id:2971445[http] name:_Evangelista, Tony_>, 
+		<Person id:2687513[http] name:_Hernández, Mario Arturo_>, 
+		<Person id:0385032[http] name:_Hillis, Rib_>, 
+		<Person id:1705423[http] name:_Piantini, Alan Nadal_>, 
+		<Person id:0005277[http] name:_O'Brien, Conan_>, 
+		<Person id:4836249[http] name:_O'Neill, Ethan_>, 
+		<Person id:1090931[http] name:_Philipson, Amanda_>, 
+		<Person id:2132711[http] name:_Pichardo, Hensy_>, 
+		<Person id:2823654[http] name:_Savoy, Katie_>, 
+		<Person id:5736554[http] name:_Simon, William_>, 
+		<Person id:1556688[http] name:_Then, Hector_>, 
+		<Person id:4843358[http] name:_Tilles, Andrew E._>
+		], 
+	u'animation department': 
+		[
+		<Person id:0910520[http] name:_Walton, Harry_>
+		], 
+	'original music': 
+		[
+		<Person id:3683814[http] name:_Brown, Cynthia_>
+		]
+	}, 
+'modFunct': <function modClearRefs at 0x7fe4881f8398>}
