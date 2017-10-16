@@ -33,7 +33,7 @@ def movieDataToJSON(personName):
 #    return data
 #
 # test
-# movieDataToJSON('Christian Bale')
+# movieDataToJSON('Kit Harrington')
 #
 #
 #
