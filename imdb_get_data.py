@@ -8,6 +8,7 @@ Person IMDB data collector.
 import datetime
 from imdb import IMDb
 
+# roles is a custom-made list of roles for a person to have in a movie
 roles = [
         'stunts', 
         'sound department', 
@@ -17,15 +18,88 @@ roles = [
         'actor',
         'director',
         'in development', 
-        'miscellaneous crew'
-        ]
+        'miscellaneous crew']
+
+# Below infsets are the information set which can be retrieved for
+# a corresponding object. Not every object has all listed information sets
+infsets_movie = [
+        'airing',
+        'akas', 
+        'alternate versions', 
+        'amazon reviews', 
+        'awards', 
+        'business', 
+        'connections', 
+        'crazy credits', 
+        'critic reviews', 
+        'dvd', 
+        'episodes', 
+        'episodes cast', 
+        'episodes rating', 
+        'external reviews', 
+        'faqs', 
+        'full credits', 
+        'goofs', 
+        'guests', 
+        'keywords', 
+        'literature', 
+        'locations', 
+        'main', 
+        'merchandising links', 
+        'misc sites', 
+        'news', 
+        'newsgroup reviews', 
+        'official sites', 
+        'parents guide', 
+        'photo sites', 
+        'plot', 
+        'quotes', 
+        'recommendations', 
+        'release dates', 
+        'release info', 
+        'sound clips', 
+        'soundtrack', 
+        'synopsis', 
+        'taglines', 
+        'technical', 
+        'trivia', 
+        'tv schedule', 
+        'video clips', 
+        'vote details']
+
+infsets_person = [
+        'awards', 
+        'biography', 
+        'episodes', 
+        'filmography', 
+        'genres links', 
+        'keywords links', 
+        'main', 
+        'merchandising links', 
+        'news', 
+        'official sites', 
+        'other works', 
+        'publicity']
+
+infsets_character = [
+        'biography', 
+        'episodes', 
+        'filmography', 
+        'main', 
+        'quotes']
+
+infsets_company = [
+        'main']
 
 print_on = True
 ia = IMDb()
-print ia.get_movie_infoset()
-print ia.get_person_infoset()
-print ia.get_character_infoset()
-print ia.get_company_infoset()
+#print ia.get_movie_infoset()
+#print ia.get_person_infoset()
+#print ia.get_character_infoset()
+#print ia.get_company_infoset()
+#movie = ia.get_movie('0096952', 'episodes rating')
+movie = ia.get_movie('0120338',info=['main','critic reviews'])
+print vars(movie)
 
 def searchPersonIdByName(personName):
     if print_on:
@@ -42,7 +116,7 @@ def searchPersonIdByName(personName):
     
     return firstPerson.personID
 
-def getPerson(personId):
+def getPerson(personId, info=[0]):
     if print_on:
         print 'a get_person: \'%s\' %s' % (personId, datetime.datetime.now())
 
@@ -92,39 +166,42 @@ def getMoviesByMovieIds(movieIds):
     
     return movies
 
-# to test search by person name --> get personId
-personId = searchPersonIdByName("Roger Corman")
 
-# to test person data --> get Person object
-person = getPerson(personId)
 
-# to test movieid listings per 'role' --> get dict (role, list-of-movie-ids)
-movieIdsInRole = {}
-for role in roles:
-    movieIdsInRole[role] = getMovieIdsByRole(person, role)
-    if print_on:
-        print '#movies ', len(movieIdsInRole[role]), role
-if print_on:
-    print len(movieIdsInRole)
 
-# to test movies for role --> list of Movie objects
-writer_movies = getMoviesByMovieIds(movieIdsInRole.get('writer'))
-if print_on:
-    for movie in writer_movies:
-        print movie.summary()
-    print vars(movie)
-# to show that update adds more information to movie, 
-# big question is what sets are there that can be updated, 
-# which are we interested in??
-#    ia.update(movie, 'business')
-#    print vars(movie)
-
-# just to mention, person can have pseudonames, should we search them as well?    
-if print_on:
-    print person['akas']
-
+## to test search by person name --> get personId
+#personId = searchPersonIdByName("Roger Corman")
+#
+## to test person data --> get Person object
+#person = getPerson(personId)
+#
+## to test movieid listings per 'role' --> get dict (role, list-of-movie-ids)
+#movieIdsInRole = {}
+#for role in roles:
+#    movieIdsInRole[role] = getMovieIdsByRole(person, role)
+#    if print_on:
+#        print '#movies ', len(movieIdsInRole[role]), role
 #if print_on:
-#    print 'a get_person: %s' % datetime.datetime.now()
+#    print len(movieIdsInRole)
+#
+## to test movies for role --> list of Movie objects
+#writer_movies = getMoviesByMovieIds(movieIdsInRole.get('writer'))
+#if print_on:
+#    for movie in writer_movies:
+#        print movie.summary()
+#    print vars(movie)
+## to show that update adds more information to movie, 
+## big question is what sets are there that can be updated, 
+## which are we interested in??
+##    ia.update(movie, 'business')
+##    print vars(movie)
+#
+## just to mention, person can have pseudonames, should we search them as well?    
+##if print_on:
+##    print person['akas']
+#
+##if print_on:
+##    print 'a get_person: %s' % datetime.datetime.now()
 
 #print vars(director)
 #print "##################################################"
