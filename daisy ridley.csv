@@ -1,14 +1,25 @@
-role,title,year,runtime,rating,genres
-producer,The Eagle Huntress,2016,[u'87'],7.5,"[u'Documentary', u'Adventure', u'Sport']"
-actress,Star Wars: Forces of Destiny,2017,[u'3'],6.2,"[u'Animation', u'Adventure', u'Family', u'Sci-Fi']"
-actress,Star Wars: Episode VII - The Force Awakens,2015,[u'136'],8.1,"[u'Action', u'Adventure', u'Fantasy', u'Sci-Fi']"
-actress,Saturday Night Live,1975,[u'90'],8.1,"[u'Comedy', u'Music']"
-actress,Scrawl,2015,[u'82'],6.9,"[u'Fantasy', u'Horror']"
-actress,Mr Selfridge,2013,[u'45::(approx.)'],7.7,[u'Drama']
-actress,Silent Witness,1996,"[u'60::(season 1,2,6 - 11)', u'120::(Season 3,4,and 5)']",7.8,"[u'Crime', u'Drama', u'Mystery']"
-actress,Toast of London,2012,[u'30'],8.2,[u'Comedy']
-actress,Wiley: Lights On,2013,[u'4'],5.2,"[u'Short', u'Music']"
-actress,Blue Season,2013,[u'UK:5'],5.5,"[u'Short', u'Sci-Fi']"
-actress,Casualty,1986,[u'50'],6.0,[u'Drama']
-actress,Lifesaver,2013,[u'29'],7.6,"[u'Short', u'Drama']"
-actress,Omohide poro poro,1991,[u'118'],7.7,"[u'Animation', u'Drama', u'Romance']"
+role,kind,title,year,runtime,rating,votes,genres,plot outline,rentals
+producer,movie,The Eagle Huntress,2016,[u'87'],7.5,2194,"[u'Documentary', u'Adventure', u'Sport']",Thirteen-year-old Aisholpan trains to become the first female in twelve generations of her Kazakh family to become an eagle huntress.,
+actress,movie,Chaos Walking,2019,,,,[u'Sci-Fi'],"A dystopian world where there are no women and all living creatures can hear each others' thoughts in a stream of images, words, and sounds called Noise.",
+actress,movie,Peter Rabbit,2018,,,,"[u'Animation', u'Adventure', u'Comedy', u'Family', u'Fantasy']",Feature adaptation of Beatrix Potter's classic tale of a rebellious rabbit trying to sneak into a farmer's vegetable garden.,
+actress,movie,Ophelia,2018,,,,"[u'Drama', u'Romance']","A re-imagining of Hamlet, told from Ophelia's perspective.",
+actress,movie,Star Wars: The Last Jedi,2017,[u'150'],,,"[u'Action', u'Adventure', u'Fantasy', u'Sci-Fi']","Having taken her first steps into a larger world in  (2015), Rey continues her epic journey with Finn, Poe, and Luke Skywalker in the next chapter of the saga.",
+actress,video game,Star Wars: Battlefront II,2017,,,,"[u'Action', u'Adventure', u'Fantasy', u'Sci-Fi', u'War']","A game based on the Star Wars Universe, taking place across multiple eras of the franchise",
+actress,movie,Murder on the Orient Express,2017,,,,"[u'Crime', u'Drama', u'Mystery']","A lavish train ride unfolds into a stylish & suspenseful mystery. From the novel by Agatha Christie, Murder on the Orient Express tells of thirteen stranded strangers & one man's race to solve the puzzle before the murderer strikes again.",
+actress,movie,A Woman of No Importance,,,,,"[u'Biography', u'Drama', u'War']","The story of American spy, Virginia Hall, who worked for the British intelligence during World War II.",
+actress,movie,Kolma,,,,,"[u'Drama', u'Fantasy', u'Thriller']",A remarried widow is given an unusual offer to relive her first love as the end of her life draws closer.,
+actress,tv series,Star Wars: Forces of Destiny,2017,[u'3'],6.2,293,"[u'Animation', u'Adventure', u'Family', u'Sci-Fi']",Small moments and everyday decisions shape a larger heroic saga.,
+actress,video game,Lego Star Wars: The Force Awakens,2016,,8.4,384,"[u'Adventure', u'Sci-Fi']",The re-telling of the newest installment in the iconic Star Wars saga told through the witty humor of Lego.,
+actress,movie,Star Wars: Episode VII - The Force Awakens,2015,[u'136'],8.1,689983,"[u'Action', u'Adventure', u'Fantasy', u'Sci-Fi']","Three decades after the Empire's defeat, a new threat arises in the militant First Order. Stormtrooper defector Finn and spare parts scavenger Rey are caught up in the Resistance's search for the missing Luke Skywalker.",
+actress,tv series,Saturday Night Live,1975,[u'90'],8.1,35765,"[u'Comedy', u'Music']",A famous guest host stars in parodies and sketches created by the cast of this witty show.,
+actress,movie,Scrawl,2015,[u'82'],6.9,98,"[u'Fantasy', u'Horror']","A boy writes a comic book with his best friend, and finds situations depicted in the comic book coming to life...",
+actress,video game,Disney Infinity 3.0,2015,,7.5,217,[u'Action'],"The third instalment in Disney's toys to life game franchise. Collecting characters from Disney, Marvel, and Star Wars.",
+actress,tv series,Mr Selfridge,2013,[u'45::(approx.)'],7.7,11791,[u'Drama'],"Centers on the real-life story of the flamboyant and visionary American founder of Selfridge's, London's department store.",
+actress,tv series,Silent Witness,1996,"[u'60::(season 1,2,6 - 11)', u'120::(Season 3,4,and 5)']",7.8,3569,"[u'Crime', u'Drama', u'Mystery']",Crimes through the eyes of a team of forensic pathologists and forensic scientists.,
+actress,tv series,Toast of London,2012,[u'30'],8.2,2498,[u'Comedy'],"Steven Toast, an eccentric middle aged actor with a chequered past, spends more time dealing with his problems off stage than performing on it",
+actress,video movie,Wiley: Lights On,2013,[u'4'],5.2,8,"[u'Short', u'Music']","The music video for ""Lights On"" by Wiley featuring Angel and Tinchy Stryder.",
+actress,tv series,Youngers,2013,,6.7,490,"[u'Comedy', u'Drama']","Two best friends, one who has nothing going for him and the other with top grades and a bright future want to take their grime to the next level...",
+actress,movie,Blue Season,2013,[u'UK:5'],5.5,215,"[u'Short', u'Sci-Fi']",Sarah wakes up to find herself hanging upside down. As she screams for help a phone rings and the person on the other hand helps her escape. Is all as it seems to be?,
+actress,tv series,Casualty,1986,[u'50'],6.0,1905,[u'Drama'],The everyday lives of the people frequenting the frenetic Accident and Emergency department of Holby City hospital.,
+actress,movie,Lifesaver,2013,[u'29'],7.6,52,"[u'Short', u'Drama']",Lifesaver is an app and website which fuses interactivity and live-action film to throw you into three situations where someone will die unless you do the right thing.,
+actress,movie,Omohide poro poro,1991,[u'118'],7.7,16223,"[u'Animation', u'Drama', u'Romance']",A twenty-seven-year-old office worker travels to the countryside while reminiscing about her childhood in Tokyo.,

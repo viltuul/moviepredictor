@@ -33,28 +33,47 @@ def createCSV(personName):
 # Creates the title row for the values that are to be written in the file. When changing adding more columns to 
 # the file remember to add the titles here also.
 def titleRowForCSV():
-    return ['role','title','year','runtime','rating','genres']
+    return ['role','kind','title','year','runtime','rating','votes','genres','plot outline','rentals']
     
 # Here one can select the data which gets written on the csv file.
-# Somehow need to automize errorhandling in this method. Many movies hasn't all the data we might need,
-# so my idea would be that if there is no data or its 'weird data' we write some fake data here. Or alternatively we
-# write some value to the column which can be handled in the next phase of our project. You can test how the errors
-# occur by running createCSV('Daisy Ridley') for example.
+# @return the row which will be written to the csv file. Row indicates all the data from single movie.
 def movieToData(movie,role):
     datarow = []
-    datarow.append(role)
-    datarow.append(movie['title'])
-    datarow.append(movie['year'])
-    datarow.append(movie['runtime'])
-    datarow.append(movie['rating'])
-    datarow.append(movie['genres'])
+    datarow.append(role) # what was the role of the person, i.e. actor,actress,director e.t.c.
+    datarow.append(getDataValue(movie, 'kind'))
+    datarow.append(getDataValue(movie, 'title'))
+    datarow.append(getDataValue(movie, 'year'))
+    datarow.append(getDataValue(movie, 'runtime'))
+    datarow.append(getDataValue(movie, 'rating'))
+    datarow.append(getDataValue(movie, 'votes'))
+    datarow.append(getDataValue(movie, 'genres'))
+    datarow.append(getDataValue(movie, 'plot outline'))
+    datarow.append(getDataValue(movie, 'business\'][\'rentals'))
     return [datarow]
-    
+# Gets single cell value from the get_movie method.
+# @param movie, the movie objec from which the data is parsed.
+# @param jsonKey, the key which will get the value from the movie object.
+# @return string value which in the csv file is one cell of data.
+def getDataValue(movie,jsonKey):
+    cellValue = ''
+    try:
+        row = movie[jsonKey]
+    except Exception as ex:
+        exToString = str(movie) + ' Error was caused by: ' + str(ex)
+        print str(exToString)
+    return cellValue
+
+
+
+print 'Creating the csv file. Please wait. This might take a minute.'
 igd.print_on = False
 # Anne sellors has only one movie so it's fast to get and easy to test
 # Side note Anne Sellors causes exception if print_on is True. Quess some data is missing from her infoset.
 # createCSV('Anne Sellors')
+
 # Also Daisy Ridley hasn't too many movies so easy to test. Causes some errors because movie year is unknown
 # for some movies.
 createCSV('daisy ridley')
-print 'done'
+
+# createCSV('Hyke Ray')
+print 'Program is ready.'
