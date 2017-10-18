@@ -10,15 +10,17 @@ from imdb import IMDb
 
 # roles is a custom-made list of roles for a person to have in a movie
 roles = [
-        'stunts', 
-        'sound department', 
+        #'stunts', 
+        #'sound department', 
         'producer', 
-        'self', 
+        #'self', 
         'writer',
         'actor',
+        'actress',
         'director',
-        'in development', 
-        'miscellaneous crew']
+        #'in development', 
+        'miscellaneous crew'
+        ]
 
 # Below infsets are the information set which can be retrieved for
 # a corresponding object. Not every object has all listed information sets
@@ -98,8 +100,16 @@ ia = IMDb()
 #print ia.get_character_infoset()
 #print ia.get_company_infoset()
 #movie = ia.get_movie('0096952', 'episodes rating')
-movie = ia.get_movie('0120338',info=['main','critic reviews'])
-print vars(movie)
+#movie = ia.get_movie('0120338',info=['main','critic reviews'])
+#print vars(movie)
+
+
+
+def getMovie(id):
+    return ia.get_movie(id)
+
+
+
 
 def searchPersonIdByName(personName):
     if print_on:
@@ -155,7 +165,7 @@ def getMoviesByMovieIds(movieIds):
     for movieId in movieIds:
         if print_on:
             print 'a get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
-        movie = ia.get_movie(movieId)
+        movie = ia.get_movie(movieId, info=['main','critic reviews','business','vote details'])
         #ia.update(movie, 'all')
         movies.append(movie)
         if print_on:
