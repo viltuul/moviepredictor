@@ -10,16 +10,16 @@ from imdb import IMDb
 
 # roles is a custom-made list of roles for a person to have in a movie
 roles = [
-        #'stunts', 
-        #'sound department', 
         'producer', 
-        #'self', 
         'writer',
         'actor',
         'actress',
         'director',
-        #'in development', 
         'miscellaneous crew'
+        #'in development',
+        #'stunts', 
+        #'sound department', 
+        #'self' 
         ]
 
 # Below infsets are the information set which can be retrieved for
