@@ -165,7 +165,7 @@ def getMoviesByMovieIds(movieIds):
     for movieId in movieIds:
         if print_on:
             print 'a get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
-        movie = ia.get_movie(movieId, info=['main','critic reviews','business','vote details'])
+        movie = ia.get_movie(movieId, info=['main','business','crazy credits','critic reviews','plot','quotes','trivia','vote details'])
         #ia.update(movie, 'all')
         movies.append(movie)
         if print_on:
