@@ -15,7 +15,7 @@ roles = [
         'actor',
         'actress',
         'director',
-        'miscellaneous crew'
+        #'miscellaneous crew'
         #'in development',
         #'stunts', 
         #'sound department', 
@@ -93,7 +93,7 @@ infsets_character = [
 infsets_company = [
         'main']
 
-print_on = True
+print_on = False
 ia = IMDb()
 #print ia.get_movie_infoset()
 #print ia.get_person_infoset()
@@ -126,7 +126,7 @@ def searchPersonIdByName(personName):
     
     return firstPerson.personID
 
-def getPerson(personId, info=[0]):
+def getPerson(personId):
     if print_on:
         print 'a get_person: \'%s\' %s' % (personId, datetime.datetime.now())
 
@@ -176,7 +176,25 @@ def getMoviesByMovieIds(movieIds):
     
     return movies
 
+def getMovieInfsetsByMovieIds(movieIds, infsets):
+    if print_on:
+        print 'a movies: \'%s\' %s' % (len(movieIds), datetime.datetime.now())
 
+    movies = []
+
+    for movieId in movieIds:
+        if print_on:
+            print 'a get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
+        movie = ia.get_movie(movieId, info=infsets)
+        #ia.update(movie, 'all')
+        movies.append(movie)
+        if print_on:
+            print 'b get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
+
+    if print_on:
+        print 'b movies: \'%s\' %s' % (len(movieIds), datetime.datetime.now())
+    
+    return movies
 
 
 ## to test search by person name --> get personId
