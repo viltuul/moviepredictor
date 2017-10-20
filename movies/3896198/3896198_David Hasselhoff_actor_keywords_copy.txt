@@ -1,0 +1,40 @@
+{
+'_roleIsPerson': False, 
+'_roleClass': <class 'imdb.Character.Character'>, 
+'movieID': '3896198', 
+'infoset2keys': 
+	{'keywords': ['keywords']}, 
+'current_info': ['keywords'], 
+'keys_tomodify': 
+	{
+	'crazy credits': None, 
+	'plot': None, 
+	'business': None, 
+	'dvd': None, 
+	'video review': None, 
+	'alternate versions': None, 
+	'soundtrack': None, 
+	'quotes': None, 
+	'supplements': None, 
+	'news': None, 
+	'goofs': None, 
+	'trivia': None, 
+	'faqs': None, 
+	'laserdisc': None
+	}, 
+'notes': u'', 
+'key2infoset': 
+	{'keywords': 'keywords'}, 
+'myTitle': u'', 
+'charactersRefs': {}, 
+'accessSystem': 'http', 
+'namesRefs': {}, 
+'myID': None, 
+'_Container__role': None, 
+'titlesRefs': {}, 
+'data': 
+	{
+	'keywords': [u'raccoon', u'demi-god', u'mixtape', u'alien-creature', u'marvel-cinematic-universe', u'sarcasm', u'crash-landing', u'blue-skin', u'green-skin', u'good-versus-evil', u'patricide', u'superhero-team', u'anti-hero', u'estranged-sister', u'final-showdown', u'megalomaniac', u'immortal', u'evil-god', u'mechanical-hand', u'space-fleet', u'stealing', u'tree-like-humanoid', u'celestial', u'fictional-planet', u'alien-spaceship', u'walkman', u'sister-sister-relationship', u'father-son-reunion', u'father-son-fight', u'father-son-conflict', u'father-son-relationship', u'based-on-comic-book', u'superhero', u'reference-to-david-hasselhoff', u'pac-man', u'bare-chested-male', u'galaxy', u'part-computer-animation', u'pregnancy', u'father-figure', u'core', u'terraforming', u'seed', u'skull', u'destruction', u'slapstick-comedy', u'funeral-pyre', u'freeze-to-death', u'anti-heroine', u'floating-in-space', u'teamwork', u'warrior', u'tough-guy', u'spacesuit', u'space-battle', u'estranged-father', u'surprise-after-end-credits', u'surprise-during-end-credits', u'impalement', u'giant-monster', u'1980s', u'self-sacrifice', u'theft', u'gold-skin', u'gun-fu', u'stylized-violence', u'warp-speed', u'audio-cassette', u'reference-to-pac-man', u'immortality', u'foster-father', u'countdown', u'space-pirate', u'daddy-issues', u'love', u'sister-sister-hug', u'cavern', u'mascot', u'battery', u'sister-against-sister', u'end-tease-for-sequel', u'female-green-skinned-humanoid-alien', u'superheroine', u'young-version-of-character', u'returning-character-killed-off', u'sister-sister-conflict', u'sister-sister-fight', u'talking-tree', u'celestial-being', u'bomb-timer-counting-down', u'talking-animal', u'human-alien-relationship', u'singing-in-a-spaceship', u'super-powers', u'misfits', u'based-on-comic', u'marvel-comics', u'space-opera', u'sequel', u'eyeball', u'strip-club', u'muscular-man', u'sensitive-nipple', u'reference-to-heather-locklear', u'fight', u'betrayal', u'sovereign', u'ectogenesis', u'ectogen', u'artificial-womb', u'hybrid', u'ends-with-funeral', u'interspecies-friendship', u'interspecies-romance', u'reference-to-mary-poppins', u'long-take', u'face-mask', u'levitation', u'anti-gravity-boots', u'hired-killer', u'wilhelm-scream', u'tracking-device', u'orphan', u'astronaut', u'moon', u'clone', u'telepathy', u'flying', u'fighting-in-the-air', u'gadgetry', u'hypnotism', u'moral-dilemma', u'manipulation', u'training', u'filmed-killing', u'escape-pod', u'guard', u'security-camera', u'hatred', u'anger', u'assassination-attempt', u'female-killer', u'female-assassin', u'assassin', u'attempted-murder', u'zero-gravity', u'science-fantasy', u'disfigurement', u'orb', u'palace', u'near-death-experience', u'female-warrior', u'tough-girl', u'adventure-hero', u'crushed-to-death', u'female-bounty-hunter', u'bounty-hunter', u'female-mercenary', u'mercenary', u'jumping-from-height', u'falling-from-height', u'scene-before-opening-credits', u'aerial-shot', u'scene-during-opening-credits', u'opening-action-scene', u'warrior-race', u'genetic-engineering', u'fugitive', u'on-the-run', u'exile', u'asteroid-belt', u'asteroid', u'bubble', u'tragic-past', u'dark-past', u'telekinesis', u'mind-control', u'mind-reading', u'brain', u'x-rayed-skeleton', u'final-battle', u'showdown', u'race-against-time', u'giant-squid', u'squid', u'giant-creature', u'interrogation', u'creature', u'tied-to-a-chair', u'montage', u'redemption', u'jet-pack', u'kiss', u'hologram', u'empath', u'subterranean', u'meteor', u'geode', u'forest', u'revenge', u'world-domination', u'cyborg', u'2010s', u'robot', u'swashbuckler', u'flash-forward', u'tragic-hero', u'prologue', u'rampage', u'haunted-by-the-past', u'small-town', u'timebomb', u'mexican-standoff', u'booby-trap', u'pirate', u'southern-accent', u'ambush', u'jailbreak', u'wisecrack-humor', u'black-comedy', u'comic-relief', u'hand-to-hand-combat', u'mixed-martial-arts', u'martial-arts', u'laser', u'exploding-planet', u'exploding-ship', u'exploding-body', u'knocked-out', u'shootout', u'gunfight', u'combat', u'battlefield', u'battle', u'electrocution', u'explosive', u'punched-in-the-chest', u'punched-in-the-face', u'fight-to-the-death', u'brawl', u'fistfight', u'catfight', u'cave', u'torso-cut-in-half', u'scar', u'surveillance', u'tattoo', u'slow-motion-action-scene', u'slow-motion-scene', u'sword', u'surrealism', u'force-field', u'transformation', u'explosive-decompression', u'wormhole', u'portal', u'shot-through-a-window', u'cassette-player', u'shot-through-a-door', u'spacecraft', u'severed-arm', u'space-travel', u'outer-space', u'shot-in-the-arm', u'planet', u'shot-to-death', u'regeneration', u'invulnerability', u'shot-in-the-face', u'shot-in-the-chest', u'god', u"character-repeating-someone-else's-dialogue", u'double-cross', u'deception', u'repeated-line', u'rescue', u'held-at-gunpoint', u'hostage', u'anthropomorphism', u'violence', u'death', u'gatling-gun', u'knife', u'stan-lee-cameo', u'marvel-entertainment', u'dual-wield', u'shape-shifter', u'digit-in-title', u'shape-shifting', u'blockbuster', u'tears', u'desintegration', u'vintage', u'atomic-bomb', u'photo', u'murder', u'tunnel', u'machine-gun', u'light', u'eternity', u'beard', u'slow-dance', u'dance', u'crazy-laugh', u'distortion', u'insignia', u'gun', u'falling', u'riot', u'gang', u'psychopath', u'bad-teeth', u'complaint', u'cage', u'energy', u'mockery', u'pregnant-woman', u'bubbles', u'whistling', u'electric-discharge', u'blast', u'slow-motion', u'tracker', u'cape', u'laughing', u'hire', u'confession', u'squad', u'captain', u'snowing', u'crash', u'high-priestess', u'anti-gravity', u'gadgets', u'genius', u'alien-monster', u'alien', u'battle-suit', u'time-lapse', u'couple', u'singing', u'telekinetic', u'arrow', u'funeral', u'suicide', u'sacrifice', u'terraform', u'seedling', u'skeleton', u'imprisonment', u'drone', u'monster', u'heroine', u'hero', u'mutiny', u'written-by-director', u'giant', u'thief', u'alien-race', u'human-alien', u'pilot', u'android', u'flashback', u'shackle', u'handcuffs', u'supernatural-power', u'human-in-outer-space', u'steal', u'escape', u'action-heroine', u'anthropomorphic-animal', u'starship', u'troll-doll', u'kidnapping', u'masked-man', u'rocket-launcher', u'missouri', u'super-strength', u'chase', u'spaceship', u'bomb-explosion', u'explosion', u'bomb', u'dancing', u'fictional-war', u'laser-gun', u'action-hero', u'cameo', u'scene-after-end-credits', u'sequel-mentioned-during-end-credits', u'scene-during-end-credits', u'father-son-talk', u'year-2014', u'year-1980', u'singing-in-a-car', u'ensemble-cast', u'cosmic', u'second-part', u'number-in-title', u'surprise-ending', u'brothel', u'helmet', u'drunkeness', u'statue', u'beer', u'castle', u'throne', u'safe', u'stripper', u'snow', u'urination', u'campfire', u'blob', u'diner', u'pistol', u'dreadlocks', u'scottish-accent', u'jail-cell', u'flashlight', u'gadget', u'ipod', u'severed-toe', u'pulp-fiction', u'firework', u'sideburns', u'speaker', u'penis-joke', u'spider', u'tramp', u'jacket', u'club', u'joke', u'dinner', u'car', u'sunglasses', u'hypnotize', u'woods', u'duck']
+	}, 
+'modFunct': <function modClearRefs at 0x7f9d48042ed8>
+}

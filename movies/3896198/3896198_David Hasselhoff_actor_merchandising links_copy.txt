@@ -1,0 +1,19 @@
+{
+'_roleIsPerson': False, 
+'_roleClass': <class 'imdb.Character.Character'>, 
+'movieID': '3896198', 
+'infoset2keys': {'merchandising links': []}, 
+'current_info': ['merchandising links'], 
+'keys_tomodify': {'crazy credits': None, 'plot': None, 'business': None, 'dvd': None, 'video review': None, 'alternate versions': None, 'soundtrack': None, 'quotes': None, 'supplements': None, 'news': None, 'goofs': None, 'trivia': None, 'faqs': None, 'laserdisc': None
+}, 
+'notes': u'', 
+'key2infoset': {}, 
+'myTitle': u'', 
+'charactersRefs': {}, 
+'accessSystem': 'http', 
+'namesRefs': {}, 
+'myID': None, 
+'_Container__role': None, 
+'titlesRefs': {}, 
+'data': {}, 
+'modFunct': <function modClearRefs at 0x7f9d48042ed8>}

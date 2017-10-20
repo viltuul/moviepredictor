@@ -1,0 +1,371 @@
+{
+'_roleIsPerson': False, 
+'_roleClass': <class 'imdb.Character.Character'>, 
+'movieID': '3896198', 
+'infoset2keys': 
+	{
+	'main': 
+		[
+		u'music department', 
+		'votes', 
+		'camera and electrical department', 
+		u'distributors', 
+		'rating', 
+		'runtimes', 
+		'production manager', 
+		'costume designer', 
+		'original music', 
+		u'thanks', 
+		'make up', 
+		'year', 
+		'production design', 
+		'miscellaneous crew', 
+		u'production companies', 
+		'color info', 
+		u'casting department', 
+		'languages', 
+		'genres', 
+		'producer', 
+		'title', 
+		'mpaa', 
+		'assistant director', 
+		'special effects companies', 
+		'casting director', 
+		'visual effects', 
+		'writer', 
+		'set decoration', 
+		'editor', 
+		'certificates', 
+		u'costume department', 
+		'country codes', 
+		'language codes', 
+		u'special effects department', 
+		u'editorial department', 
+		'sound mix', 
+		u'location management', 
+		'cinematographer', 
+		'director', 
+		'stunt performer', 
+		'miscellaneous companies', 
+		u'animation department', 
+		'art direction', 
+		'sound crew', 
+		'akas', 
+		'aspect ratio', 
+		'kind', 
+		u'art department', 
+		'countries', 
+		u'transportation department', 
+		'plot outline', 
+		'cast', 
+		'cover url'
+		]
+	}, 
+'current_info': 
+	[
+	'main'
+	], 
+'keys_tomodify': 
+	{
+	'crazy credits': None, 
+	'plot': None, 
+	'business': None, 
+	'dvd': None, 
+	'video review': None, 
+	'alternate versions': None, 
+	'soundtrack': None, 
+	'quotes': None, 
+	'supplements': None, 
+	'news': None, 
+	'goofs': None, 
+	'trivia': None, 
+	'faqs': None, 
+	'laserdisc': None
+	}, 
+'notes': u'', 
+'key2infoset': 
+	{
+	u'music department': 'main', 
+	u'distributors': 'main', 
+	'rating': 'main', 
+	'runtimes': 'main', 
+	'costume designer': 'main', 
+	u'thanks': 'main', 
+	'make up': 'main', 
+	'year': 'main', 
+	'production design': 'main', 
+	'miscellaneous crew': 'main', 
+	'aspect ratio': 'main', 
+	'color info': 'main', 
+	u'special effects department': 'main', 
+	'visual effects': 'main', 
+	'votes': 'main', 
+	'producer': 'main', 
+	'title': 'main', 
+	'mpaa': 'main', 
+	'assistant director': 'main', 
+	'writer': 'main', 
+	'kind': 'main', 
+	'casting director': 'main', 
+	'languages': 'main', 
+	'production manager': 'main', 
+	'set decoration': 'main', 
+	'editor': 'main', 
+	'certificates': 'main', 
+	u'costume department': 'main', 
+	'country codes': 'main', 
+	'language codes': 'main', 
+	'cover url': 'main', 
+	'director': 'main', 
+	u'casting department': 'main', 
+	'special effects companies': 'main', 
+	'sound mix': 'main', 
+	'genres': 'main', 
+	u'production companies': 'main', 
+	'stunt performer': 'main', 
+	'miscellaneous companies': 'main', 
+	'cinematographer': 'main', 
+	'art direction': 'main', 
+	'akas': 'main', 
+	'sound crew': 'main', 
+	u'location management': 'main', 
+	'camera and electrical department': 'main', 
+	u'art department': 'main', 
+	'countries': 'main', 
+	u'transportation department': 'main', 
+	'plot outline': 'main', 
+	'cast': 'main', 
+	u'animation department': 'main', 
+	'original music': 'main', 
+	u'editorial department': 'main'
+	}, 
+'myTitle': u'', 
+'charactersRefs': {}, 
+'accessSystem': 'http', 
+'namesRefs': {}, 
+'myID': None, 
+'_Container__role': None, 
+'titlesRefs': {}, 
+'data': 
+	{
+	u'music department': 
+		[
+		...
+		], 
+	'sound crew': 
+		[
+		...
+		], 
+	u'distributors': 
+		[
+		...
+		], 
+	'rating': 7.8, 
+	'runtimes': 
+		[
+		u'136'
+		], 
+	'costume designer': 
+		[
+		...
+		], 
+	u'thanks': 
+		[
+		...
+		], 
+	'make up': 
+		[
+		...
+		], 
+	'year': 2017, 
+	'production design': 
+		[
+		...
+		], 
+	'miscellaneous crew': 
+		[
+		...
+		], 
+	'color info': 
+		[
+		u'(ACES)'
+		], 
+	u'casting department': 
+		[
+		...
+		], 
+	'languages': 
+		[
+		u'English'
+		], 
+	'votes': 277850, 
+	'producer': 
+		[
+		...
+		], 
+	'title': u'Guardians of the Galaxy Vol. 2', 
+	'mpaa': u'Rated PG-13 for sequences of sci-fi action and violence, language, and brief suggestive content', 
+	'assistant director': 
+		[
+		...
+		], 
+	'writer': 
+		[
+		...
+		], 
+	'casting director': 
+		[
+		...
+		], 
+	'visual effects': 
+		[
+		...
+		], 
+	'production manager': 
+		[
+		...
+		], 
+	'set decoration': 
+		[
+		...
+		], 
+	'editor': 
+		[
+		...
+		], 
+	'certificates': 
+		[
+		u'Argentina:13', 
+		u'Australia:M', 
+		u'Austria:12', 
+		u'Brazil:12', 
+		u'Canada:PG::(British Columbia)', 
+		u'Canada:G::(Qu\xe9bec)', 
+		u'Chile:TE', 
+		u'France:Tous publics', 
+		u'Germany:12', 
+		u'Hong Kong:IIA', 
+		u'Hungary:12', 
+		u'Ireland:12A', 
+		u'Japan:G', 
+		u'Malaysia:P13', 
+		u'Mexico:B', 
+		u'Netherlands:12', 
+		u'Norway:12', 
+		u'Philippines:PG-13', 
+		u'Portugal:M/12', 
+		u'Russia:16+', 
+		u'Singapore:PG13', 
+		u'South Korea:12', 
+		u'Sweden:11', 
+		u'Switzerland:12', 
+		u'Taiwan:R-12', 
+		u'Thailand:G', 
+		u'UK:12A', 
+		u'USA:PG-13::(certificate #50971)'
+		], 
+	u'costume department': 
+		[
+		...
+		], 
+	'country codes': 
+		[
+		u'us', 
+		u'nz', 
+		u'ca'
+		], 
+	'language codes': 
+		[
+		u'en'
+		], 
+	'cover url': u'https://images-na.ssl-images-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1._SX94_SY140_.jpg',
+	u'special effects department': 
+		[
+		...
+		], 
+	'special effects companies': 
+		[
+		...
+		], 
+	'sound mix': 
+		[
+		u'Dolby Digital', 
+		u'Dolby Surround 7.1', 
+		u'12-Track Digital Sound::(IMAX 12 track)', 
+		u'IMAX 6-Track', 
+		u'Dolby Atmos', 
+		u'Sonics-DDP::(IMAX version)'
+		], 
+	u'location management': 
+		[
+		...
+		], 
+	'genres': 
+		[
+		u'Action', 
+		u'Adventure', 
+		u'Sci-Fi'
+		], 
+	'director': 
+		[
+		...
+		], 
+	'stunt performer': 
+		[
+		...
+		], 
+	'miscellaneous companies': 
+		[
+		...
+		], 
+	'cinematographer': 
+		[
+		...
+		], 
+	'art direction': 
+		[
+		...
+		], 
+	'akas': 
+		[
+		...
+		], 
+	'aspect ratio': u'1.90 : 1', 
+	u'production companies': 
+		[
+		...
+		], 
+	'kind': u'movie', 
+	u'art department': 
+		[
+		...
+		], 
+	'countries': 
+		[
+		u'USA', 
+		u'New Zealand', 
+		u'Canada'], 
+	u'transportation department': 
+		[
+		...
+		], 
+	'plot outline': u"The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quill's true parentage.", 
+	'cast': 
+		[
+		...
+		], 
+	u'animation department': 
+		[
+		...
+		], 
+	'original music': 
+		[
+		...
+		], 
+	u'editorial department': 
+		[
+		...
+		]
+	},
+'modFunct': <function modClearRefs at 0x7f9d48042ed8>
+}
