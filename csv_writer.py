@@ -1,6 +1,41 @@
 import imdb_get_data as igd
 import csv
 from timeit import default_timer as timer
+
+main_titles = [
+        'movieID',
+        'role',
+        'kind',
+        'title',
+        'year',
+        'aspect_ratio',
+        'genres',
+        'runtimes',
+        'rating',
+        'votes',
+        'color_info',
+        'plot_outline',
+        'language_codes',
+        'country_codes']
+main_fields = [
+        'kind',
+        'title',
+        'year',
+        'aspect ratio',
+        'genres',
+        'runtimes',
+        'rating',
+        'votes',
+        'color info',
+        'plot outline',
+        'language codes',
+        'country codes']
+
+titles = {}
+titles['main'] = main_titles
+
+fields = {}
+fields['main'] = main_fields
     
 #Creates csv file of the movies of the given person. 
 def csvWriter(personName):
@@ -31,12 +66,53 @@ def csvWriter(personName):
     print len(errors), 'Errors'
     if len(errors)>0:
         print 'Erronous movies', errors
+
+#Creates csv file of the movies with selected infsets of the given person. 
+def csvInfsetWriter(personName, infsets):
+    infNames = '_'.join(infsets)
+    with open(personName + infNames + ".csv", "w") as outfile:
+        writer = csv.writer(outfile)
+        personId = igd.searchPersonIdByName(personName)
+        person = igd.getPerson(personId)
+        movieIdsInRole = {}
+        errors = []
+        writer.writerows(infTitleRowForCSV(infsets))
+        for role in igd.roles:
+            movieIdsInRole = igd.getMovieIdsByRole(person, role)
+
+            movies = igd.getMovieInfsetsByMovieIds(movieIdsInRole, infsets)
+#           Write one movie at a time, then it's easier to catch and find errors  
+            for movie in movies:
+                try:
+                    data = movieInfsetToData(movie,role,infsets)
+                    writer.writerows(data)
+                    print 'Movie ', movie, ' is now added to the file!'
+#               If exception occurs write it down.
+                except Exception as ex:
+                    exToString = str(movie) + ' Error was caused by: ' + str(ex)
+                    errors.append(str(exToString))
+                    
+    print '\n Created a csv file! \n'
+    #If there were any errors let the user know.
+    print len(errors), 'Errors'
+    if len(errors)>0:
+        print 'Erronous movies', errors
+
 # Creates the title row for the values that are to be written in the file. When changing adding more columns to 
 # the file remember to add the titles here also. Has to be in same order as movieToData method has its parameters.
 def titleRowForCSV():
     return ['role','kind','title','year','runtime','genres','plot outline','rating','total votes','votes/rating'
             ,'demographic','certificates','metascore','mpaa','color info','trivia','rentals'] # rentals not working yet
     
+
+# Creates the title row based on selected infsets
+def infTitleRowForCSV(infsets):
+    ret_titles = []
+    for a in infsets:
+        if titles.has_key(a):
+            ret_titles.append(titles.get(a))
+    return ret_titles
+
 # Here one can select the data which gets written on the csv file.
 # @return the row which will be written to the csv file. Row indicates all the data from single movie.
 def movieToData(movie,role):
@@ -60,6 +136,19 @@ def movieToData(movie,role):
     datarow.append(getDataValue(movie, 'data\'][\'business\'][u\'rentals'))
     
     return [datarow]
+
+# Here one can select the data which gets written on the csv file.
+# @return the row which will be written to the csv file. Row indicates all the data from single movie.
+def movieInfsetToData(movie,role,infsets):
+    datarow = []
+    datarow.append(movie.movieID)
+    datarow.append(role) # what was the role of the person, i.e. actor,actress,director e.t.c.
+    for a in infsets:
+        fieldnames = fields[a]
+        for b in fieldnames:
+            datarow.append(getDataValue(movie, b))
+    return [datarow]
+
 # Gets single cell value from the get_movie method.
 # @param movie, the movie objec from which the data is parsed.
 # @param jsonKey, the key which will get the value from the movie object.
@@ -82,11 +171,21 @@ def createCSV(personName):
     print 'Time taken: ', (end - start), ' seconds'  
     print 'Program is ready.'
 
+def createInfCSV(personName):
+    start = timer()
+    print 'Creating the csv file. Please wait. This might take a minute.'
+    igd.print_on = True
+    csvInfsetWriter(personName, ['main'])
+    end = timer()
+    print 'Time taken: ', (end - start), ' seconds'  
+    print 'Program is ready.'
 
 # Anne sellors has only one movie so it's fast to get and easy to test
 # Side note Anne Sellors causes exception if print_on is True. Quess some data is missing from her infoset.
-# createCSV('Anne Sellors')
-
+#createCSV('Anne Sellors')
+#createInfCSV('Anne Sellors')
+ 
+ 
 # Also Daisy Ridley hasn't too many movies so easy to test. Causes some errors because movie year is unknown
 # for some movies.
 # createCSV('Daisy Ridley')

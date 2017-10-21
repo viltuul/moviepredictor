@@ -142,7 +142,7 @@ def getPerson(personId):
 
 def getMovieIdsByRole(person, role):
     if print_on:
-        print 'a person: \'%s\' \'%s\' %s' % (role, person['birth name'], datetime.datetime.now())
+        print 'a person: \'%s\' %s' % (role, datetime.datetime.now())
 
     movieIds = []
 
@@ -152,7 +152,7 @@ def getMovieIdsByRole(person, role):
             movieIds.append(movie.movieID)
     
     if print_on:
-        print 'b person: \'%s\' \'%s\' %s' % (role, person['birth name'], datetime.datetime.now())
+        print 'b person: \'%s\' %s' % (role, datetime.datetime.now())
     
     return movieIds
 
@@ -166,7 +166,6 @@ def getMoviesByMovieIds(movieIds):
         if print_on:
             print 'a get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
         movie = ia.get_movie(movieId, info=['main','business','crazy credits','critic reviews','plot','quotes','trivia','vote details'])
-        #ia.update(movie, 'all')
         movies.append(movie)
         if print_on:
             print 'b get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
@@ -186,7 +185,6 @@ def getMovieInfsetsByMovieIds(movieIds, infsets):
         if print_on:
             print 'a get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
         movie = ia.get_movie(movieId, info=infsets)
-        #ia.update(movie, 'all')
         movies.append(movie)
         if print_on:
             print 'b get_movie : \'%s\' %s' % (movieId, datetime.datetime.now())
