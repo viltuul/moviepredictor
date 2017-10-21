@@ -3,8 +3,6 @@ import csv
 from timeit import default_timer as timer
 
 main_titles = [
-        'movieID',
-        'role',
         'kind',
         'title',
         'year',
@@ -31,11 +29,59 @@ main_fields = [
         'language codes',
         'country codes']
 
+business_titles = [
+        'budget']
+business_fields = [
+        'budget']
+
+votedtls_titles = [
+        'arithmetic_mean',
+        'demographic',
+        'number_of_votes',
+        'median']
+votedtls_fields = [
+        'arithmetic mean',
+        'demographic',
+        'number of votes',
+        'median']
+
+keywords_titles = [
+        'keywords']
+keywords_fields = [
+        'keywords']
+
+taglines_titles = [
+        'taglines']
+taglines_fields = [
+        'taglines']
+
+trivia_titles = [
+        'trivia']
+trivia_fields = [
+        'trivia']
+
+reldates_titles = [
+        'release_dates']
+reldates_fields = [
+        'release dates']
+
 titles = {}
 titles['main'] = main_titles
+titles['business'] = business_titles
+titles['vote details'] = votedtls_titles
+titles['keywords'] = keywords_titles
+titles['taglines'] = taglines_titles
+titles['trivia'] = trivia_titles
+titles['release dates'] = reldates_titles
 
 fields = {}
 fields['main'] = main_fields
+fields['business'] = business_fields
+fields['vote details'] = votedtls_fields
+fields['keywords'] = keywords_fields
+fields['taglines'] = taglines_fields
+fields['trivia'] = trivia_fields
+fields['release dates'] = reldates_fields
     
 #Creates csv file of the movies of the given person. 
 def csvWriter(personName):
@@ -70,13 +116,13 @@ def csvWriter(personName):
 #Creates csv file of the movies with selected infsets of the given person. 
 def csvInfsetWriter(personName, infsets):
     infNames = '_'.join(infsets)
-    with open(personName + infNames + ".csv", "w") as outfile:
+    with open(personName + '_' + infNames + ".csv", "w") as outfile:
         writer = csv.writer(outfile)
         personId = igd.searchPersonIdByName(personName)
         person = igd.getPerson(personId)
         movieIdsInRole = {}
         errors = []
-        writer.writerows(infTitleRowForCSV(infsets))
+        writer.writerows([infTitleRowForCSV(infsets)])
         for role in igd.roles:
             movieIdsInRole = igd.getMovieIdsByRole(person, role)
 
@@ -107,10 +153,10 @@ def titleRowForCSV():
 
 # Creates the title row based on selected infsets
 def infTitleRowForCSV(infsets):
-    ret_titles = []
+    ret_titles = ['movieID', 'role']
     for a in infsets:
         if titles.has_key(a):
-            ret_titles.append(titles.get(a))
+            ret_titles = ret_titles + titles.get(a)
     return ret_titles
 
 # Here one can select the data which gets written on the csv file.
@@ -140,13 +186,27 @@ def movieToData(movie,role):
 # Here one can select the data which gets written on the csv file.
 # @return the row which will be written to the csv file. Row indicates all the data from single movie.
 def movieInfsetToData(movie,role,infsets):
-    datarow = []
-    datarow.append(movie.movieID)
-    datarow.append(role) # what was the role of the person, i.e. actor,actress,director e.t.c.
+    datarow = [movie.movieID, role]
     for a in infsets:
         fieldnames = fields[a]
         for b in fieldnames:
-            datarow.append(getDataValue(movie, b))
+            if a == 'main':
+                datarow.append(getDataValue(movie, b))
+            elif a == 'business':
+                td = getDataValue(movie, a)
+                datarow.append(getDataValue(td, b))
+            elif a == 'vote details':
+                datarow.append(getDataValue(movie, b))
+            elif a == 'keywords':
+                datarow.append(getDataValue(movie, b))
+            elif a == 'taglines':
+                datarow.append(getDataValue(movie, b))
+            elif a == 'trivia':
+                datarow.append(getDataValue(movie, b))
+            elif a == 'release dates':
+                datarow.append(getDataValue(movie, b))
+            else:
+                datarow.append(' ')
     return [datarow]
 
 # Gets single cell value from the get_movie method.
@@ -175,7 +235,7 @@ def createInfCSV(personName):
     start = timer()
     print 'Creating the csv file. Please wait. This might take a minute.'
     igd.print_on = True
-    csvInfsetWriter(personName, ['main'])
+    csvInfsetWriter(personName, ['main','business','vote details','keywords','taglines','trivia','release dates'])
     end = timer()
     print 'Time taken: ', (end - start), ' seconds'  
     print 'Program is ready.'
@@ -184,6 +244,7 @@ def createInfCSV(personName):
 # Side note Anne Sellors causes exception if print_on is True. Quess some data is missing from her infoset.
 #createCSV('Anne Sellors')
 #createInfCSV('Anne Sellors')
+#createInfCSV('Hyke Ray')
  
  
 # Also Daisy Ridley hasn't too many movies so easy to test. Causes some errors because movie year is unknown
