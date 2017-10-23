@@ -3,7 +3,7 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn import datasets, linear_model
+from sklearn.svm import SVR
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 import pandas as pd
@@ -27,36 +27,14 @@ df[cat_columns] = df[cat_columns].apply(lambda x: x.cat.codes)
 
 #sets target and data as numpy array
 target = df['rating'].values
-data = df[["year"]].values   #for multiple regression  data = df[["role", "kind", "genres", "year", "total votes"]].values
+data = df[["role", "kind", "genres", "year", "total votes"]].values
 
 # Split the data and target into training/testing sets
 X_train, X_test, y_train, y_test = train_test_split(data, target, train_size = 0.8, test_size = 0.2)
 
-# Create linear regression object
-regr = linear_model.LinearRegression()
 
-# Train the model using the training sets
-regr.fit(X_train, y_train)
+svr_rbf = SVR(kernel='rbf', C=1e3, gamma=0.1)
+y_rbf = svr_rbf.fit(X_train, y_train)
+y_pre = y_rbf.predict(X_test)
 
-# Make predictions using the testing set
-y_pred = regr.predict(X_test)
-print y_pred[0:5]
-
-# The coefficients
-print('Coefficients: \n', regr.coef_)
-# The mean squared error
-print("Mean squared error: %.2f"
-      % mean_squared_error(y_test, y_pred))
-# Explained variance score: 1 is perfect prediction
-print('Variance score: %.2f' % r2_score(y_test, y_pred))
-
-print len(X_test)
-print len(y_test)
-# Plot outputs
-plt.scatter(X_test, y_test,  color='black')
-plt.plot(X_test, y_pred, color='blue', linewidth=3)
-
-plt.xticks(())
-plt.yticks(())
-
-plt.show()
+print y_pre[0:5]
