@@ -4,6 +4,11 @@ import pandas as pd
 import re
 import numpy as np
 
+possibleGenres = ['Action', 'Biography', 'Drama', 'War', 'Sport', 'Crime', 'Game-Show',
+ 'Reality-TV', 'Thriller', 'Documentary', 'Music', 'Romance', 'Adventure', 'Short', 
+ 'Comedy','Horror', 'Animation', 'Family', 'Fantasy', 'Sci-Fi', 'Mystery', 'History',
+ 'Western','Musical','Film-Noir','Short','Talk-Show']
+
 def replaceOldFile(data, fileName):
     data.to_csv('parsed' + fileName)
     
@@ -15,17 +20,15 @@ def clean(fileName):
     data['runtimes'] = parseRuntimes(data['runtimes'])
     data['budget'] = parseBudget(data['budget'])
     
-    genresAll = allGenres(data['genres'])
-    
-    data = createNewColumnsForGenres(data, genresAll)
-    data = putGenreValuesToGenreColumns(data, genresAll)
+    data = createNewColumnsForGenres(data)
+    data = putGenreValuesToGenreColumns(data)
     replaceOldFile(data,fileName)
     print fileName, 'Ready!'
 
-def putGenreValuesToGenreColumns(data, genresAll):
+def putGenreValuesToGenreColumns(data):
     i = 0
     for movie in data['genres']:
-        for genre in genresAll:
+        for genre in possibleGenres:
             if genre in movie:
                 data.set_value(i,genre,1)
         i = i + 1 
@@ -33,18 +36,9 @@ def putGenreValuesToGenreColumns(data, genresAll):
 #     print data['Action']
     return data
 
-def allGenres(genres):
-    allGenres = []
-    for row in genres:
-        for value in row:
-            if value not in allGenres:
-                allGenres.append(value)
-    return allGenres
 
-
-
-def createNewColumnsForGenres(data, allGenres):
-    for genre in allGenres:
+def createNewColumnsForGenres(data):
+    for genre in possibleGenres:
         newCol = np.zeros(len(data))
         data[genre] = newCol
     return data
@@ -65,7 +59,7 @@ def parseGenres(col):
 def parseRuntimes(col):
     newCol = []
     for value in col:
-        if len(value) == 0:
+        if value is not None:
             newCol.append('')
             continue
         value = value.split('\'')
@@ -77,7 +71,7 @@ def parseRuntimes(col):
 def parseBudget(col):
     newCol = []
     for value in col:
-        if len(value) == 0:
+        if value is not None:
             newCol.append('')
             continue
         value = value.split('\'')
@@ -87,12 +81,12 @@ def parseBudget(col):
 
 
 
-clean('Charles Bronson_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Charlie Chaplin_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Charles Bronson_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Charlie Chaplin_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 
 

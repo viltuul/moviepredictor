@@ -217,6 +217,7 @@ def getDataValue(movie,jsonKey):
     cellValue = ''
     try:
         cellValue = movie[jsonKey]
+        cellValue = cellValue.replace(";", "\;")
     except Exception as ex:
         exToString = str(movie) + ' Error was caused by: ' + str(ex)
         print str(exToString)
@@ -245,6 +246,7 @@ def createInfCSV(personName):
 #createCSV('Anne Sellors')
 #createInfCSV('Anne Sellors')
 #createInfCSV('Hyke Ray')
+#createInfCSV('Charles Bronson')
  
  
 # Also Daisy Ridley hasn't too many movies so easy to test. Causes some errors because movie year is unknown
