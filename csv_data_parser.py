@@ -57,9 +57,13 @@ def parseGenres(col):
     return newCol
     
 def parseRuntimes(col):
+
     newCol = []
     for value in col:
-        if value is not None:
+    	if type(value) == float:
+    		newCol.append(value)
+    		continue
+        if len(value) == 0:
             newCol.append('')
             continue
         value = value.split('\'')
@@ -71,7 +75,10 @@ def parseRuntimes(col):
 def parseBudget(col):
     newCol = []
     for value in col:
-        if value is not None:
+    	if type(value) == float:
+    		newCol.append(value)
+    		continue
+        if len(value) == 0:
             newCol.append('')
             continue
         value = value.split('\'')
@@ -81,12 +88,12 @@ def parseBudget(col):
 
 
 
-#clean('Charles Bronson_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Charlie Chaplin_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Charles Bronson_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Robert De Niro_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 
 
