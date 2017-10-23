@@ -95,5 +95,6 @@ clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_releas
 clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Al Pacino_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 
 
