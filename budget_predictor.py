@@ -24,6 +24,8 @@ for val in categorical_values:
 cat_columns = df.select_dtypes(['category']).columns
 df[cat_columns] = df[cat_columns].apply(lambda x: x.cat.codes)
 
+df["budget"] = df["budget"].astype(int)
+
 #sets target and data 
 target = df['budget']
 data = df[["year", "votes", "runtimes", "rating", "role", "kind"]]  
@@ -38,11 +40,7 @@ clf = RandomForestClassifier(n_estimators = 100, max_depth = 4)
 regr.fit(X_train, y_train)
 
 
-#floats can't be used as target vector with random forest
-lab_enc = preprocessing.LabelEncoder()
-y_train = lab_enc.fit_transform(y_train)
-y_test = lab_enc.fit_transform(y_test)
-
+#floats can't be used as target vector with random forest)
 print y_test
 
 # Train the model using the training sets
@@ -54,7 +52,8 @@ print "Linear regression predictions"
 print regr.predict(X_test)[0:5]
 
 print "Random forest predictions"
-print clf.predict(X_test)[0:5]*100000
+print clf.predict(X_test)[0:5]
 
-print "Random forest importance"
+print "Random forest feature importance"
 print clf.feature_importances_
+

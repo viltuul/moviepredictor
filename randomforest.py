@@ -3,6 +3,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from sklearn import preprocessing
+from sklearn.model_selection import cross_val_score
 
 df = pd.read_csv('parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
 
@@ -17,8 +18,8 @@ lab_enc = preprocessing.LabelEncoder()
 df["rating"] = lab_enc.fit_transform(df["rating"])
 
 #sets target and data as numpy array
-target = df["rating"].values
-data = df[["votes", "year", "runtimes", "budget"]].values
+target = df["rating"]
+data = df[["votes", "year", "runtimes", "budget"]]
 
 # Split the data and target into training/testing sets
 X_train, X_test, y_train, y_test = train_test_split(data, target, train_size = 0.8, test_size = 0.2)

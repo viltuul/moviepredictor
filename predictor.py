@@ -17,6 +17,8 @@ df = pd.read_csv(file_path, index_col = False)
 if len(sys.argv) > 2:
     genre = sys.argv[2]
     df = df[df[genre] == 1]
+else:
+    genre =""    
 
 #fills missing values with means
 for val in ["rating", "votes", "year", "runtimes", "budget"]:
@@ -34,7 +36,7 @@ df[cat_columns] = df[cat_columns].apply(lambda x: x.cat.codes)
 #sets target and data 
 target1 = df['rating']
 data1 = df[["year", "votes", "runtimes", "budget", "role", "kind"]]  
-target2 = df['budget']
+target2 = df["budget"].astype(int)
 data2 = df[["rating", "year", "runtimes", "votes", "role", "kind"]]  
 
 # Split the data and target into training/testing sets
@@ -54,29 +56,27 @@ regr2.fit(X_train2, y_train2)
 lab_enc = preprocessing.LabelEncoder()
 y_train1 = lab_enc.fit_transform(y_train1)
 y_test1 = lab_enc.fit_transform(y_test1)
-y_train2 = lab_enc.fit_transform(y_train2)
-y_test2 = lab_enc.fit_transform(y_test2)
 
 # Train the model using the training sets
 clf1.fit(X_train1, y_train1)
 clf2.fit(X_train2, y_train2)
 
 # Make predictions using the testing set
-print "Linear regression predictions for person's next 5 movies ratings"
+print "Linear regression predictions for person's next 5",genre,"movies ratings"
 print regr1.predict(X_test1)[0:5]
 
-print "Random forest predictions for next person's 5 movies ratings"
+print "Random forest predictions for next person's 5",genre,"movies ratings"
 print clf1.predict(X_test1)[0:5]/10.0
 
 print "Random forest importance"
 print clf1.feature_importances_
 print
 # Make predictions using the testing set
-print "Linear regression predictions for person's next 5 movies budgets"
+print "Linear regression predictions for person's next 5",genre,"movies budgets"
 print regr2.predict(X_test2)[0:5]
 
-print "Random forest predictions for person's next 5 movies budgets"
-print clf2.predict(X_test2)[0:5]*100000
+print "Random forest predictions for person's next 5",genre,"movies budgets"
+print clf2.predict(X_test2)[0:5]
 
-print "Random forest importance"
+print "Random forest feature importance"
 print clf2.feature_importances_
