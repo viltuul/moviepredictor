@@ -12,10 +12,19 @@ df = pd.read_csv('parsedRoger Corman_main_business_vote details_keywords_tagline
 #fills missing values with means
 for val in ["rating", "votes", "year", "runtimes", "budget"]:
     df[val].fillna(df[val].mean(), inplace=True)
+    
+categorical_values = ["role", "kind"]
+
+# Turn categorical values into numbers instead of strings
+for val in categorical_values:
+    df[val] = df[val].astype('category')
+
+cat_columns = df.select_dtypes(['category']).columns
+df[cat_columns] = df[cat_columns].apply(lambda x: x.cat.codes)
 
 #sets target and data as numpy array
 target = df['rating'].values
-data = df[["year"]].values   #for multiple regression  data = df[["role", "kind", "genres", "year", "total votes"]].values
+data = df[["year", "votes", "year", "runtimes", "budget", "role", "kind"]].values   
 
 # Split the data and target into training/testing sets
 X_train, X_test, y_train, y_test = train_test_split(data, target, train_size = 0.8, test_size = 0.2)
