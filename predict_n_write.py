@@ -12,7 +12,20 @@ possibleGenres = ['Action', 'Biography', 'Drama', 'War', 'Sport', 'Crime', 'Game
 
 def fillPredictedValues(fileName):
     data = pd.read_csv(fileName, error_bad_lines=False)
-    data.fillna('',inplace= True)
+    
+    for val in ["votes", "year", "runtimes"]:
+        data[val].fillna(data[val].mean(), inplace=True)
+    
+    categorical_values = ["role", "kind"]
+
+    # Turn categorical values into numbers instead of strings
+    for val in categorical_values:
+        data[val] = data[val].astype('category')
+        
+    cat_columns = data.select_dtypes(['category']).columns
+    data[cat_columns] = data[cat_columns].apply(lambda x: x.cat.codes) 
+    data['rating'].fillna(0, inplace=True)
+    data['budget'].fillna(0, inplace=True)
     addBudget(data)
     addRating(data)
     data.to_csv('predicted' + fileName)
@@ -20,7 +33,7 @@ def fillPredictedValues(fileName):
 def addRating(data):
     for row in range(0,len(data.index)-1):
         value = data.iloc[row]['rating']
-        if value == '':
+        if value == 0:
             predictedRating = getPredicteRatingForMovie(data)
             data.set_value(row,'rating',predictedRating)
     return data
@@ -29,7 +42,7 @@ def addRating(data):
 def addBudget(data):
     for row in range(0,len(data.index)-1):
         value = data.iloc[row]['budget']
-        if value == '':
+        if value == 0:
             predictedBudget = getPredictedBudgetForMovie(data)
             data.set_value(row,'budget',predictedBudget)
     return data
@@ -39,21 +52,7 @@ def addBudget(data):
 
 #Andreas, put here the machine learning or linear regression implementation.
 def getPredictedBudgetForMovie(df):
-    df = df[df["budget"] != '']
-    df["budget"] = df["budget"].astype(int)
-    
-    for val in ["rating", "votes", "year", "runtimes", "budget"]:
-        df[val].fillna(df[val].mean(), inplace=True)
-    
-    categorical_values = ["role", "kind"]
-
-    # Turn categorical values into numbers instead of strings
-    for val in categorical_values:
-        df[val] = df[val].astype('category')
-
-    cat_columns = df.select_dtypes(['category']).columns
-    df[cat_columns] = df[cat_columns].apply(lambda x: x.cat.codes)
-
+    df = df[df["budget"] != 0]
 
     #sets target and data 
     target = df['budget']
@@ -70,25 +69,14 @@ def getPredictedBudgetForMovie(df):
     return regr.predict(X_test)[0:1]
 
 def getPredicteRatingForMovie(df):
-    df = df[df["rating"] != '']
-    df["budget"] = df["budget"].astype(int)
-    #fills missing values with means
-    for val in ["rating", "votes", "year", "runtimes", "budget"]:
-        print df[val]
-        df[val].fillna(df[val].mean(), inplace=True)
-    
-    categorical_values = ["role", "kind"]
-
-    # Turn categorical values into numbers instead of strings
-    for val in categorical_values:
-        df[val] = df[val].astype('category')
-
-    cat_columns = df.select_dtypes(['category']).columns
-    df[cat_columns] = df[cat_columns].apply(lambda x: x.cat.codes)
+    df = df[df["rating"] != 0]
+    #sets target and data 
+    target = df['budget']
+    data = df[["year", "votes", "runtimes", "rating", "role", "kind"]]  
 
     #sets target and data 
     target = df['rating']
-    data = df[["year", "votes", "runtimes", "budget", "role", "kind"]]  
+    data = df[["year", "votes", "runtimes", "role", "kind"]]  
 
     # Split the data and target into training/testing sets
     X_train, X_test, y_train, y_test = train_test_split(data, target, train_size = 0.8, test_size = 0.2)
