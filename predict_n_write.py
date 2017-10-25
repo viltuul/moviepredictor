@@ -10,7 +10,7 @@ possibleGenres = ['Action', 'Biography', 'Drama', 'War', 'Sport', 'Crime', 'Game
  'Western','Musical','Film-Noir','Short','Talk-Show']
 
 def fillPredictedValues(fileName):
-    data = pd.read_csv(fileName, error_bad_lines=False)
+    data = pd.read_csv('parsed_data/' + fileName, error_bad_lines=False)
     
     for val in ["votes", "year", "runtimes"]:
         data[val].fillna(round(data[val].mean()), inplace=True)
@@ -32,8 +32,7 @@ def fillPredictedValues(fileName):
     addBudget(data)
     data["role"] = temprole
     data["kind"] = tempkind
-    data.to_csv('predicted' + fileName)
-    print len(data[data["budget"] < 0])
+    data.to_csv('predicted_data/predicted' + fileName)
 
 def addRating(data):
     for row in range(len(data)-1, -1, -1):
@@ -69,7 +68,7 @@ def getPredictedBudgetForMovie(df):
     # Train the model using the training sets
     regr.fit(X_train, y_train)
     
-    return max(regr.predict(X_test))
+    return round(max(regr.predict(X_test)), -4)
 
 def getPredicteRatingForMovie(df):
     df = df[df["rating"] > 0]
@@ -86,6 +85,6 @@ def getPredicteRatingForMovie(df):
     # Train the model using the training sets
     regr.fit(X_train, y_train)
 
-    return max(regr.predict(X_test))
+    return round(max(regr.predict(X_test)),1)
 
-fillPredictedValues('parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+fillPredictedValues('Roger Corman.csv')

@@ -10,10 +10,10 @@ possibleGenres = ['Action', 'Biography', 'Drama', 'War', 'Sport', 'Crime', 'Game
  'Western','Musical','Film-Noir','Short','Talk-Show']
 
 def replaceOldFile(data, fileName):
-    data.to_csv('parsed' + fileName)
+    data.to_csv('parsed_data/' + fileName)
     
 def clean(fileName):
-    data = pd.read_csv(fileName, error_bad_lines=False)
+    data = pd.read_csv('raw_data/' + fileName, error_bad_lines=False)
 # Replace 'nan':s with empty value
     data.fillna('', inplace=True)   
     data['genres'] = parseGenres(data['genres'])
@@ -87,17 +87,24 @@ def parseBudget(col):
     return newCol
 
 
-
-#clean('Brad Pitt_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Robert De Niro_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Al Pacino_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Anne Sellors_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Charlie Chaplin_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-
+clean('Anne Sellors.csv')
+clean('Brad Pitt.csv')
+clean('Robert De Niro.csv')
+clean('Chuck Norris.csv')
+clean('Michael J. Fox.csv')
+clean('Roger Corman.csv')
+clean('Steven Seagal.csv')
+clean('Sylvester Stallone.csv')
+clean('Al Pacino.csv')
+clean('Anne Sellors.csv')
+#clean('Charlie Chaplin.csv')
+clean('Charles Bronson.csv')
+clean('David Bowie.csv')
+clean('David Hasselhoff.csv')
+clean('Hyke Ray.csv')
+clean('Mel Blanc.csv')
+clean('Robert Down Jr.csv')
+clean('Ron Jeremy.csv')
+clean('testi.csv')
 
 

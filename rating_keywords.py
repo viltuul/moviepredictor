@@ -6,7 +6,7 @@ from collections import Counter
 
 # read file
 #df = pd.read_csv('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False)
-df = pd.read_csv('Ron Jeremy_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
+df = pd.read_csv('raw_data/Ron Jeremy_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
 
 # choose only needed columns
 df = df.filter(['median','keywords'])

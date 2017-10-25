@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 
-df = pd.read_csv('David Hasselhoff.csv', index_col = False) 
+df = pd.read_csv('raw_data/David Hasselhoff.csv', index_col = False) 
 
 #fills missing values with means
 for val in ["rating", "total votes", "year"]:

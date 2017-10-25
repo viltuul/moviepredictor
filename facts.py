@@ -83,4 +83,4 @@ def plotRatingToBudget(data):
     plt.plot(data['rating'],data['budget'],'ro' )
     plt.show()
 
-printFactsFromFile('parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+printFactsFromFile('parsed_data/parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')

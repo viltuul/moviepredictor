@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn import preprocessing
 from sklearn.model_selection import cross_val_score
 
-df = pd.read_csv('parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
+df = pd.read_csv('parsed_data/parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
 
 #fills missing values with means
 for val in ["rating", "votes", "year", "runtimes", "budget"]:

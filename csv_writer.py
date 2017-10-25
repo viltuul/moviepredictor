@@ -85,7 +85,7 @@ fields['release dates'] = reldates_fields
     
 #Creates csv file of the movies of the given person. 
 def csvWriter(personName):
-    with open(personName + ".csv", "w") as outfile:
+    with open('raw_data/' + personName + ".csv", "w") as outfile:
         writer = csv.writer(outfile)
         personId = igd.searchPersonIdByName(personName)
         person = igd.getPerson(personId)
@@ -116,7 +116,7 @@ def csvWriter(personName):
 #Creates csv file of the movies with selected infsets of the given person. 
 def csvInfsetWriter(personName, infsets):
     infNames = '_'.join(infsets)
-    with open(personName + '_' + infNames + ".csv", "w") as outfile:
+    with open('raw_data/' + personName + ".csv", "w") as outfile:
         writer = csv.writer(outfile)
         personId = igd.searchPersonIdByName(personName)
         person = igd.getPerson(personId)
@@ -247,6 +247,7 @@ def createInfCSV(personName):
 #createInfCSV('Anne Sellors')
 #createInfCSV('Hyke Ray')
 #createInfCSV('Charles Bronson')
+#createInfCSV('Robert Down Jr')
  
  
 # Also Daisy Ridley hasn't too many movies so easy to test. Causes some errors because movie year is unknown
@@ -254,4 +255,4 @@ def createInfCSV(personName):
 # createCSV('Daisy Ridley')
 # createCSV('Hyke Ray')
 # createCSV('David Hasselhoff')
-createInfCSV('Mel Blanc')
+#createInfCSV('Mel Blanc')
