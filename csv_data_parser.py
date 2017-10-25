@@ -92,7 +92,7 @@ def parseBudget(col):
 #clean('Robert De Niro_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 #clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 #clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-#clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 #clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 #clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 #clean('Al Pacino_main_business_vote details_keywords_taglines_trivia_release dates.csv')
