@@ -66,9 +66,9 @@ def parseRuntimes(col):
         if len(value) == 0:
             newCol.append('')
             continue
-        value = value.split('\'')
-        value[1] = int(filter(str.isdigit, value[1]))
-        newCol.append(value[1])
+        value = re.findall(r'\d+', value)
+
+        newCol.append(value[0	])
     return newCol
     
     
@@ -88,13 +88,17 @@ def parseBudget(col):
 
 
 
-clean('Charles Bronson_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Robert De Niro_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
-clean('Al Pacino_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Brad Pitt_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Robert De Niro_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Chuck Norris_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Michael J. Fox_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Roger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Steven Seagal_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Sylvester Stallone_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Al Pacino_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Anne Sellors_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#clean('Charlie Chaplin_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+
+
 
 
