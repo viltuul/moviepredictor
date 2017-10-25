@@ -48,8 +48,6 @@ def addBudget(data):
     return data
 
 
-
-
 #Andreas, put here the machine learning or linear regression implementation.
 def getPredictedBudgetForMovie(df):
     df = df[df["budget"] != 0]
@@ -71,12 +69,8 @@ def getPredictedBudgetForMovie(df):
 def getPredicteRatingForMovie(df):
     df = df[df["rating"] != 0]
     #sets target and data 
-    target = df['budget']
-    data = df[["year", "votes", "runtimes", "rating", "role", "kind"]]  
-
-    #sets target and data 
     target = df['rating']
-    data = df[["year", "votes", "runtimes", "role", "kind"]]  
+    data = df[["year", "votes", "runtimes", "budget", "role", "kind"]]  
 
     # Split the data and target into training/testing sets
     X_train, X_test, y_train, y_test = train_test_split(data, target, train_size = 0.8, test_size = 0.2)
