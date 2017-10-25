@@ -254,3 +254,4 @@ def createInfCSV(personName):
 # createCSV('Daisy Ridley')
 # createCSV('Hyke Ray')
 # createCSV('David Hasselhoff')
+createInfCSV('Mel Blanc')
