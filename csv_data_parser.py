@@ -10,10 +10,10 @@ possibleGenres = ['Action', 'Biography', 'Drama', 'War', 'Sport', 'Crime', 'Game
  'Western','Musical','Film-Noir','Short','Talk-Show']
 
 def replaceOldFile(data, fileName):
-    data.to_csv('parsed_data/' + fileName)
+    data.to_csv('parsed_data/' + fileName+ '.csv')
     
 def clean(fileName):
-    data = pd.read_csv('raw_data/' + fileName, error_bad_lines=False)
+    data = pd.read_csv('raw_data/' + fileName + '.csv', error_bad_lines=False)
 # Replace 'nan':s with empty value
     data.fillna('', inplace=True)   
     data['genres'] = parseGenres(data['genres'])
@@ -87,24 +87,24 @@ def parseBudget(col):
     return newCol
 
 
-clean('Anne Sellors.csv')
-clean('Brad Pitt.csv')
-clean('Robert De Niro.csv')
-clean('Chuck Norris.csv')
-clean('Michael J. Fox.csv')
-clean('Roger Corman.csv')
-clean('Steven Seagal.csv')
-clean('Sylvester Stallone.csv')
-clean('Al Pacino.csv')
-clean('Anne Sellors.csv')
+#clean('Anne Sellors.csv')
+#clean('Brad Pitt.csv')
+#clean('Robert De Niro.csv')
+#clean('Chuck Norris.csv')
+#clean('Michael J. Fox.csv')
+#clean('Roger Corman.csv')
+#clean('Steven Seagal.csv')
+#clean('Sylvester Stallone.csv')
+#clean('Al Pacino.csv')
+#clean('Anne Sellors.csv')
 #clean('Charlie Chaplin.csv')
-clean('Charles Bronson.csv')
-clean('David Bowie.csv')
-clean('David Hasselhoff.csv')
-clean('Hyke Ray.csv')
-clean('Mel Blanc.csv')
-clean('Robert Down Jr.csv')
-clean('Ron Jeremy.csv')
-clean('testi.csv')
+#clean('Charles Bronson.csv')
+#clean('David Bowie.csv')
+#clean('David Hasselhoff.csv')
+#clean('Hyke Ray.csv')
+#clean('Mel Blanc.csv')
+#clean('Robert Down Jr.csv')
+#clean('Ron Jeremy.csv')
+#clean('testi.csv')
 
 

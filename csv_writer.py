@@ -248,6 +248,7 @@ def createInfCSV(personName):
 #createInfCSV('Hyke Ray')
 #createInfCSV('Charles Bronson')
 #createInfCSV('Robert Down Jr')
+#createInfCSV('Daisy Ridley')
  
  
 # Also Daisy Ridley hasn't too many movies so easy to test. Causes some errors because movie year is unknown
