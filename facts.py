@@ -140,10 +140,20 @@ def plotRatingToYear(name):
         print ex
         print 'Maeby the name is written wrong or there is no file from ', name
 
+def correlationBetweenBudgetAndRating(name):
+    try:
+        df = pd.read_csv('parsed_data/' + name + '.csv')
+        df = df[['budget','rating']]
+        print 'Correlation: Budget and Rating'
+        print df.corr(method='pearson', min_periods=1)
+    except Exception as ex:
+        print ex
+
 def correlationBetweenYearAndRating(name):
     try:
         df = pd.read_csv('parsed_data/' + name + '.csv')
         df = df[['year','rating']]
+        print 'Correlation between Year and Rating:'
         print df.corr(method='pearson', min_periods=1)
     except Exception as ex:
         print ex
