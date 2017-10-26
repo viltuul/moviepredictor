@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 import pandas as pd
 
 
-df = pd.read_csv('parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
+df = pd.read_csv('parsed_data/parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv', index_col = False) 
 
 #fills missing values with means
 for val in ["rating", "votes", "year"]:

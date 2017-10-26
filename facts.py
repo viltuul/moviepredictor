@@ -95,8 +95,11 @@ def printFactsFromFile(fileName):
 def plotRatingToBudget(name):
     try:
         df = pd.read_csv('parsed_data/' + name + '.csv')
-        data = [go.Scatter( x=df['budget'], y=df['rating'],
-                  text = df['title'],
+        df['year'] = df['year'].apply(lambda y:str(y))
+        df['text'] = df[['title', 'year']].apply(lambda x: ' '.join(x), axis=1)
+        df['text'] = df['text'].apply(lambda x: x[0:-2])
+        data = [go.Scatter( x=df['rating'], y=df['budget'],
+                  text = df['text'],
                   textposition = 'top center',
                   mode = 'markers')]
 
@@ -109,8 +112,11 @@ def plotRatingToBudget(name):
 def plotRatingToBudgetPredict(name):
     try:
         df = pd.read_csv('predicted_data/' + name + '.csv')
+        df['year'] = df['year'].apply(lambda y:str(y))
+        df['text'] = df[['title', 'year']].apply(lambda x: ' '.join(x), axis=1)
+        df['text'] = df['text'].apply(lambda x: x[0:-2])
         data = [go.Scatter( x=df['rating'], y=df['budget'],
-                  text = df['title'],
+                  text = df['text'],
                   textposition = 'top center',
                   mode = 'markers')]
 
@@ -134,6 +140,13 @@ def plotRatingToYear(name):
         print ex
         print 'Maeby the name is written wrong or there is no file from ', name
 
+def correlationBetweenYearAndRating(name):
+    try:
+        df = pd.read_csv('parsed_data/' + name + '.csv')
+        df = df[['year','rating']]
+        print df.corr(method='pearson', min_periods=1)
+    except Exception as ex:
+        print ex
 #printFactsFromFile('parsed_data/parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
 #df = df[~np.isnan(df['budget'])]
 #df = df[~np.isnan(df['rating'])]
