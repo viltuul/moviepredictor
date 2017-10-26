@@ -2,6 +2,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+import plotly.graph_objs as go
+import plotly.figure_factory as FF
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot,iplot
+
+
 def funFacts(data):
     data = data.drop(data[data['kind'] == 'tv series'].index)
     data = data.drop(data[data['kind'] == 'tv mini series'].index)
@@ -87,15 +92,49 @@ def printFactsFromFile(fileName):
     data = pd.read_csv('parsed_data/' + fileName + '.csv', error_bad_lines=False)
     funFacts(data)
     
-def plotRatingToBudget(fileName):
+def plotRatingToBudget(name):
     try:
-        data = pd.read_csv('parsed_data/' + fileName + '.csv', error_bad_lines=False)
-        data = data.drop(data[np.isnan(data['rating'])].index)
-        data = data.drop(data[np.isnan(data['rating'])].index)
-        plt.plot(data['rating'],data['budget'],'ro' )
-        plt.show()
-    except Exception as ex:
-        return 'Error: Couldn\'t plot rating and budget.'
+        df = pd.read_csv('parsed_data/' + name + '.csv')
+        data = [go.Scatter( x=df['budget'], y=df['rating'],
+                  text = df['title'],
+                  textposition = 'top center',
+                  mode = 'markers')]
 
+
+        iplot(data, filename='parsed_data/Robert Down Jr.csv')
+    except Exception as ex:
+        print ex
+        print 'Maeby the name is written wrong or there is no file from ', name
+
+def plotRatingToBudgetPredict(name):
+    try:
+        df = pd.read_csv('predicted_data/' + name + '.csv')
+        data = [go.Scatter( x=df['rating'], y=df['budget'],
+                  text = df['title'],
+                  textposition = 'top center',
+                  mode = 'markers')]
+
+
+        iplot(data, filename='parsed_data/Robert Down Jr.csv')
+    except Exception as ex:
+        print ex
+        print 'Maeby the name is written wrong or there is no file from ', name
+
+def plotRatingToYear(name):
+    try:
+        df = pd.read_csv('parsed_data/' + name + '.csv')
+        data = [go.Scatter( x=df['year'], y=df['rating'],
+                  text = df['title'],
+                  textposition = 'top center',
+                  mode = 'markers')]
+
+
+        iplot(data, filename='parsed_data/Robert Down Jr.csv')
+    except Exception as ex:
+        print ex
+        print 'Maeby the name is written wrong or there is no file from ', name
 
 #printFactsFromFile('parsed_data/parsedRoger Corman_main_business_vote details_keywords_taglines_trivia_release dates.csv')
+#df = df[~np.isnan(df['budget'])]
+#df = df[~np.isnan(df['rating'])]
+#df = df[['title','rating','budget']]

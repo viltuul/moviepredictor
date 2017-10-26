@@ -257,3 +257,7 @@ def createInfCSV(personName):
 # createCSV('Hyke Ray')
 # createCSV('David Hasselhoff')
 #createInfCSV('Mel Blanc')
+#createInfCSV('Quentin Tarantino')
+#createInfCSV('Martin Scorsese')
+#createInfCSV('Christopher Nolan')
+#createInfCSV('Steven Spielberg')

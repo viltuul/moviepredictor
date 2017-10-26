@@ -28,11 +28,18 @@ def fillPredictedValues(fileName):
     
     data['budget'].fillna(0, inplace=True)
     data['rating'].fillna(0, inplace=True)
-    addRating(data) 
-    addBudget(data)
-    data["role"] = temprole
-    data["kind"] = tempkind
-    data.to_csv('predicted_data/predicted' + fileName)
+
+    try:
+        addRating(data)
+        addBudget(data)
+        data["role"] = temprole
+        data["kind"] = tempkind
+        data.to_csv('predicted_data/predicted' + fileName)
+        print fileName,'Ready!'
+    except Exception as ex:
+        print ex
+        print 'The file ', fileName, ' might be insufficent. Check if there is any values in \'budget\' column from \'raw_data\' folder'
+
 
 def addRating(data):
     for row in range(len(data)-1, -1, -1):
@@ -87,4 +94,4 @@ def getPredicteRatingForMovie(df):
 
     return round(max(regr.predict(X_test)),1)
 
-fillPredictedValues('Roger Corman.csv')
+#fillPredictedValues('Roger Corman.csv')
