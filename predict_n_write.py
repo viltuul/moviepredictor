@@ -95,3 +95,9 @@ def getPredicteRatingForMovie(df):
     return round(max(regr.predict(X_test)),1)
 
 #fillPredictedValues('Roger Corman.csv')
+
+
+fillPredictedValues('Brad Pitt.csv')
+fillPredictedValues('Al Pacino.csv')
+fillPredictedValues('Ron Jeremy.csv')
+fillPredictedValues('Roger Corman.csv')
